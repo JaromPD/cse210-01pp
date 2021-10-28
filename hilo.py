@@ -20,6 +20,7 @@ def hilo_game(high_score_data):
     play = True
     score = 300
     while play == True:
+
         initial_card = get_card()
         new_card = get_card()
         print(f"\nThe card is: {initial_card}")
@@ -38,6 +39,11 @@ def hilo_game(high_score_data):
             new_card = f"{new_card} - Tie!"
         print(f"Next card was: {new_card}")
         print(f"Your score is: {score}")
+
+        if score <= 0:
+            print("GAME OVER! Score too low")
+            break
+
         play_again = input("Keep playing? [y/n]: ")
         if play_again.lower() == "y":
             play = True
